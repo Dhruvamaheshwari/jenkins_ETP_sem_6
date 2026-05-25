@@ -1,1 +1,3 @@
 Create a node app and deploy with the help of jenkins
+1. write the node js program 
+2. write the docker file

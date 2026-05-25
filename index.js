@@ -1,10 +1,10 @@
 const express = require('express')
-const app = express();
-
-const Port = 4000;
+const app = express()
+const port = 5000;
 
 app.get('/' , (req  ,res) => {
-    res.send("Hello jee ETP Chal rha h jeeee");
+    res.send('kyaa haal h jee , sb mast ??')
 })
 
-app.listen(Port , ()=>console.log(`server is running on port ${Port}`));
+
+app.listen(port , () => console.log(`server is started at port ${port}`))
