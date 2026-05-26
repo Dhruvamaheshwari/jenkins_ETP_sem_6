@@ -64,7 +64,7 @@ pipeline{
         stage("run the new container")
         {
             steps{
-                bat "docker run -d -p ${PORT}:8080 --name ${CONTAINER_NAME} ${DOCKER_IMAGE}:${DOCKER_TAG}"
+                bat "docker run -d -p ${PORT}:4000 --name ${CONTAINER_NAME} ${DOCKER_IMAGE}:${DOCKER_TAG}"
             }
         }
     }
