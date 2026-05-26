@@ -71,11 +71,5 @@ pipeline{
         success {
             echo "pipeline is running"
         }
-        failur{
-            echo "somthing went wrong"
-        }
-        always{
-            echo 'pipeline finished'
-        }
     }
 }
