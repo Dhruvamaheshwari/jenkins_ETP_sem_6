@@ -46,8 +46,10 @@ pipeline{
                         passwordVariable: 'DOCKER_PASSWORD'
                     )
                 ]){
-                    bat """echo %DOCKER_PASSWORD% | docker login -u %DOCKER_USERNAME% --password-stdin
-                        docker push ${DOCKER_IMAGE}:${DOCKER_TAG}"""
+                    bat """ 
+                        docker login -u %DOCKER_USERNAME% --password-stdin
+                        docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
+                        """
                 }
             }
         }
