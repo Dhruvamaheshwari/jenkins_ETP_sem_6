@@ -36,20 +36,21 @@ pipeline{
                 bat "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
             }
         }
-        stage("push Docker image")
-        {
-            steps{
+        stage("push Docker image") {
+            steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId : "dockerhub",
+                        credentialsId: "dockerhub",
                         usernameVariable: 'DOCKER_USERNAME',
                         passwordVariable: 'DOCKER_PASSWORD'
                     )
                 ]){
-                    bat """ 
-                        docker login -u %DOCKER_USERNAME% --password-stdin
+                    bat "echo Username: %DOCKER_USERNAME%"
+                    bat "echo Password length: %DOCKER_PASSWORD%"
+                    bat """
+                        echo %DOCKER_PASSWORD% | docker login -u %DOCKER_USERNAME% --password-stdin
                         docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
-                        """
+                    """
                 }
             }
         }
