@@ -45,10 +45,9 @@ pipeline{
                         passwordVariable: 'DOCKER_PASSWORD'
                     )
                 ]){
-                    bat "echo Username: %DOCKER_USERNAME%"
-                    bat "echo Password length: %DOCKER_PASSWORD%"
+                    // The trick for Windows bat is to ensure NO space before the pipe (|)
                     bat """
-                        echo %DOCKER_PASSWORD% | docker login -u %DOCKER_USERNAME% --password-stdin
+                        echo %DOCKER_PASSWORD%| docker login -u %DOCKER_USERNAME% --password-stdin
                         docker push ${DOCKER_IMAGE}:${DOCKER_TAG}
                     """
                 }
