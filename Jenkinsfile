@@ -8,7 +8,7 @@ pipeline{
     environment{
         DOCKER_IMAGE = "dhruvamaheshwari47/jenkins_etp"
         CONTAINER_NAME = "etp_prepration"
-        PORT = '3000'
+        PORT = '4000'
     }
 
     tools{
