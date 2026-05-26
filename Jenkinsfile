@@ -10,9 +10,9 @@ pipeline{
     }
 
     environment{
-        DOCKER_IMAGE = "dhruvamaheshwari47/jenkins_etp_prepation"
-        CONTAINER_NAME = "etp_prepration"
-        DOCKER_TAG  =  "latest" 
+        DOCKER_IMAGE = "dhruvamaheshwari47/jenkins_etp_prepation",
+        CONTAINER_NAME = "etp_prepration",
+        DOCKER_TAG  =  "latest",
         PORT = 4000
     }
 
